@@ -122,8 +122,8 @@ html, body {
   
   .aside {
     display: flex;
-    flex-flow: row wrap;
-    flex: 2;
+    flex-wrap: wrap;
+    align-items: center;
   }
   
   .aside a {
