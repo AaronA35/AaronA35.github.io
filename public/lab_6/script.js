@@ -17,6 +17,13 @@ function sortFunction(a, b, key) {
   return 0;
 }
 
+function getRandom(max) {
+  return Math.floor(Math.random()* Math.floor)(max);
+}
+function map (s1, s2){
+  return ('${s1} ${s2}');
+}
+
 document.body.addEventListener('submit', async (e) => {
   e.preventDefault(); // this stops whatever the browser wanted to do itself.
   const form = $(e.target).serializeArray(); // here we're using jQuery to serialize the form
@@ -29,7 +36,9 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
-      // You're going to do your lab work in here. Replace this comment.
+    if (document,querySelector('.flex-inner')){
+      document.querySelector('.flex-inner').remove();
+    }
       console.log('fromServer', fromServer);
     })
     .catch((err) => console.log(err));
