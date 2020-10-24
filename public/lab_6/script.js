@@ -8,10 +8,10 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(a, b, key) {
-  if (a[key] < b[key]) {
+function sortFunction(x, y, key) {
+  if (x[key] < y[key]) {
     return -1;
-  } if (a[key] > b[key]) {
+  } if (x[key] > y[key]) {
     return 1;
   }
   return 0;
@@ -52,10 +52,10 @@ document.body.addEventListener('submit', async (e) => {
 
     reservelist.forEach(element, i) => {
       const li = document.createElement('li');
-       $(ol).append(li);
+       
       $(li).append('<input type = "checkbox" value =${element.code} id = ${element.code} />')
       $(li).append('<label for = ${element.code}>${element.code}</label>')
-     
+      $(ol).append(li);
     };
       console.log(arr);
       console.log('Test');
