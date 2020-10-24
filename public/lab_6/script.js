@@ -41,7 +41,7 @@ document.body.addEventListener('submit', async (e) => {
     };
     const arr10 = range(10);
     const arr = arr10.map(() => {
-      const number = getRandomInt(142)
+      const number = getRandomInt(243)
       return fromServer[number];
     });
     const reservelist = arr.sort((a,b) => sortFunction(b,a,'name'));
@@ -50,7 +50,7 @@ document.body.addEventListener('submit', async (e) => {
     ol.className = 'flex-inner';
     $('form').append(ol);
 
-    reservelist.forEach(element, i) => {
+    reservelist.forEach(element, i) ; {
       const li = document.createElement('li');
        
       $(li).append('<input type = "checkbox" value =${element.code} id = ${element.code} />')
