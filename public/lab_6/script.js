@@ -1,5 +1,7 @@
 // You may wish to find an effective randomizer function on MDN.
 
+const { urlencoded } = require("express");
+
 function range(int) {
   const arr = [];
   for (let i = 0; i < int; i += 1) {
@@ -8,10 +10,10 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(x, y, key) {
-  if (x[key] < y[key]) {
+function sortFunction(a, b, key) {
+  if (a[key] < b[key]) {
     return -1;
-  } if (x[key] > y[key]) {
+  } if (a[key] > b[key]) {
     return 1;
   }
   return 0;
@@ -38,25 +40,22 @@ document.body.addEventListener('submit', async (e) => {
     .then((fromServer) => {
     if (document,querySelector('.flex-inner')){
       document.querySelector('.flex-inner').remove();
-    };
-    const arr10 = range(10);
-    const arr = arr10.map(() => {
-      const number = getRandomInt(243)
+    }
+    const narr = range(10);
+    const narr2 = narr.map(() => {
+      const number = getRandomInt(0,243)
       return fromServer[number];
     });
-    const reservelist = arr.sort((a,b) => sortFunction(b,a,'name'));
-    
-    const ol = document.createElement('ol');
-    ol.className = 'flex-inner';
-    $('form').append(ol);
+    const reservelist = narr2.sort((a,b) => sortFunction(b,a,'name'));
+    const ul = document.createElement('ol');
+    ul.className = 'flex-inner';
+    $('form').prepend(ul);
 
-    reservelist.forEach(element, i) ; {
-      const li = document.createElement('li');
-       
-      $(li).append('<input type = "checkbox" value =${element.code} id = ${element.code} />')
-      $(li).append('<label for = ${element.code}>${element.code}</label>')
-      $(ol).append(li);
-    };
+      reservelist.forEach((ol, i) =>{
+      $(li).append('<input type = "checkbox" value =${element.code} id = ${element.code} />');
+      $(li).append('<label for = ${element.code}>${element.code}</label>');
+      $(ul).append(li);
+    });
       console.log(arr);
       console.log('Test');
       console.log('fromServer', fromServer);
