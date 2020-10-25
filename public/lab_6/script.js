@@ -1,6 +1,10 @@
 // You may wish to find an effective randomizer function on MDN.
+function getRandomInt(min,max){
+  const min =Math.cell(min);
+  const max = Math.floor(max);
+  return Math.floor[Math.random()*[max-min + 1]+min];
+}
 
-const { urlencoded } = require("express");
 
 function range(int) {
   const arr = [];
