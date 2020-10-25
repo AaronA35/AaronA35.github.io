@@ -14,7 +14,7 @@ function range(int) {
   return arr;
 }
 
-function sortFunction(a, b, key) {
+function sortBykey(a, b, key) {
   if (a[key] < b[key]) {
     return -1;
   } if (a[key] > b[key]) {
@@ -42,6 +42,7 @@ document.body.addEventListener('submit', async (e) => {
   })
     .then((fromServer) => fromServer.json())
     .then((fromServer) => {
+      console.log(fromServer)
     if (document,querySelector('.flex-inner')){
       document.querySelector('.flex-inner').remove();
     }
